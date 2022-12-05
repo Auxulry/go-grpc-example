@@ -10,7 +10,7 @@ func (s *Server) Primes(in *pb.PrimesRequest, stream pb.CalculatorService_Primes
 	log.Printf("Primes function was invoked with: %v\n", in)
 
 	number := in.Number
-	divisior := int32(2)
+	divisior := int64(2)
 
 	for number > 1 {
 		if number%divisior == 0 {
