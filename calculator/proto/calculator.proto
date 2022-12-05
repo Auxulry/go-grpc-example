@@ -5,11 +5,17 @@ package calculator;
 import "sum.proto";
 import "primes.proto";
 import "avg.proto";
+import "max.proto";
 
 option go_package = "github.com/MochamadAkbar/go-grpc-example/calculator/proto";
 
 service CalculatorService {
+    // Unary
     rpc Sum(SumRequest) returns (SumResponse);
+    // Server Strem
     rpc Primes(PrimesRequest) returns (stream PrimesResponse);
+    // Client Sream
     rpc Average(stream AverageRequest) returns (AverageResponse);
+    // Bi-Directorial
+    rpc Max(stream MaxRequest) returns (stream MaxResponse);
 }
